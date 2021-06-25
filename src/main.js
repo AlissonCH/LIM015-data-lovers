@@ -93,15 +93,13 @@ function dataPart() {
 }
 plusButton.addEventListener('click',dataPart);
 
-const sortIcons = document.querySelectorAll('.sort-icons');
-sortIcons[1].addEventListener('click',showSort);
-
 function showSort(){
     const imgColumn1=document.querySelectorAll('.table-content img');
     const nameColumn2 =document.querySelectorAll('.name-text');
     const avatarColumn2 = document.querySelectorAll('.avatar');
     const sportColumn3 = document.querySelectorAll('.sport-text');
     const sortDataArray = sortData(dataAthletes);
+    console.log(sortDataArray);
     sortDataArray.forEach((item,index)=>{
         imgColumn1[index].src = `./img-paises/${item.team}.png`
         nameColumn2[index].textContent = item.name;
@@ -109,6 +107,8 @@ function showSort(){
         sportColumn3[index].textContent = item.sport;
     }) 
 }
+const sortIcons = document.querySelectorAll('.sort-icons');
+sortIcons[1].addEventListener('click',showSort);
 
 /*tenDataAthletes.forEach(item=>{
     tableContent.innerHTML+=`
