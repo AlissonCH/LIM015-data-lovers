@@ -1,0 +1,1095 @@
+:root{
+    --main-color-green: #02A650;
+    --color-darK-green: #016632;
+    --color-light-green:#02F276;
+    --color-green-one: #02B357;
+    --color-green-two: #018c45;
+    --color-orange: #FAA700;
+    --color-gold: #FCC861;
+    --color-silver: #D8D8D8;
+    --color-light-silver: #EFEFEF;
+    --color-dark-silver: #BABFC3;
+    --color-bronze: #CC8251;
+}
+*{
+    font-family: 'Mulish', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+nav{
+    width: 280px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 100;
+    transition: width 300ms;
+    align-items: center;
+    background: linear-gradient(to bottom, #FAA700, #02a650);
+}
+nav .logo{
+    height: 230px;
+    padding: 1rem 0rem 1rem 2rem;
+}
+.sidebar-menu{
+    margin-top: 1rem;
+}
+.sidebar-menu li{
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+.sidebar-menu a{
+    padding-left: 1rem;
+    display: block;
+    color: white;
+    font-size: 1.1rem;
+}
+.sidebar-menu li a:hover, a.active{
+    background: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--main-color-green);
+    border-radius: 30px 0px 0px 30px;
+    transition: 700ms;
+}
+.sidebar-menu a i{
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+.sidebar-menu input{
+    display: none;
+}
+.container{
+    transition: margin-left 300ms;
+    margin-left: 280px;
+    position: relative;
+}
+header{
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 280px;
+    width: calc(100% - 280px);
+    top: 0;
+    z-index: 100;
+    transition: left 300ms;
+    align-items: center;
+}
+#country, #sports, #statistics{
+    display: none;
+}
+.header-title{
+    align-items: center;
+    color: var(--color-orange);
+    padding-right: 1rem;
+    text-transform: uppercase;
+}
+header label i{
+    font-size: 1.7rem;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+main{
+    margin-top: 90px;
+    padding: 1.5rem 3.5rem;
+    background: white;
+    min-height: calc(100vh - 90px);
+    overflow: hidden;
+}
+main h1{
+    color: #02A650;
+    font-size: 65px;
+    margin-top: 15px;
+}
+#nav-toggle:checked + nav{
+    width: 70px;
+}
+#nav-toggle:checked + nav li{
+    padding-left: 1rem;
+    text-align: left;
+}
+#nav-toggle:checked + nav li a{
+    padding-left: 1rem;
+}
+#nav-toggle:checked + nav .logo,
+#nav-toggle:checked + nav li a span{
+    display: none;
+}
+#nav-toggle:checked ~ .container{
+    margin-left: 70px;
+}
+#nav-toggle:checked ~ .container header{
+    width: calc(100% - 70px);
+    left: 70px;
+}
+#nav-toggle:checked ~ .container .tableSport{
+    grid-template-columns: repeat(5,1fr);
+}
+
+/*-------------------PopUp----------------*/
+.popUp{
+    display: 'none';
+}
+.popUp.active{
+    display: 'block';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    color: var(--color-darK-green);
+    font-size: 18px;
+    z-index: 1;
+    transition: all 300ms ease;
+}
+.popUpContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 350px;
+    margin-top: 3rem;
+    margin-left: 5rem;
+    background-color: white;
+    box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+    transition: all 400ms ease;
+}
+.popUpContent .popUp-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left, #FAA700, #02a650);
+    color: white;
+    font-size: 15px;
+    padding: 1.5rem 0;
+    
+}
+.popUpContent .popUp-header h2{
+    padding-left: 1rem;
+}
+.popUpContent label{
+    position: relative;
+    right: 1rem;
+    color: white;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+.popUpContent label:hover{
+    cursor: pointer;
+    background-color: var(--color-darK-green);
+    color: white;
+}
+.popUpContent .popUp-main{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.popUpContent .popUp-info div{
+    padding-bottom: 0.2rem;
+}
+.popUpContent .popUp-value{
+    color: black;
+}
+.popUpContent .popUp-img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    padding-right: 0.5rem;
+}
+.popUpContent .popUp-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+}
+
+
+/*----------ATLETAS TARJETAS---------------*/
+.cards .medalsTitle{
+    text-align: center;  
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 2rem;
+}
+#country .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 2rem;
+}
+.cards .name-athlete-card, .name-country-card{
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-dark-silver);
+}
+.card-athlete, .card-country{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-light-silver);
+    padding: 1rem 1.5rem 1.5rem;
+    border-radius: 5px;
+    height: 350px;
+}
+.team-athlete-card{
+    display: flex;
+}
+.team-name{
+    padding-top: 0.7rem;
+    padding-left: 0.5rem
+}
+.img-box {
+    display: flex;
+    justify-content: center;
+}
+.cards .img-card{
+    height: 115px;
+    width: 115px;
+    border-radius: 100%;
+}
+.medals{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.medal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-country .medals{
+    align-items:center;
+    justify-content: space-around;
+}
+.medal-letter{
+    padding-left: 3px;
+}
+h3{
+    margin-top: 3rem;
+}
+
+/*---------------FILTRADO---------------*/
+.inputFilter {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.search-input{
+    width: 90%;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+}
+.input-label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+    height: 36px;
+    left: 0px;
+    top: 1px;
+    background: white;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03);
+    border: 1px solid  #BABFC3;
+    border-radius: 15px;
+}
+#filterAthletes{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+.select-box{
+    width: 270px;
+}
+#btn-clean1, #btn-clean2{
+    margin-left: 1rem;
+    background-color: var(--color-orange);
+    padding:8px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid  #3f3d3d;
+    border-radius: 17px;
+}
+
+#btn-clean1:hover{
+    color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+    border-color:white;
+}
+#btn-clean2:hover{
+    color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+    border-color:white;
+}
+
+.select{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 36px;
+    left: 0px;
+    top: 1px;
+    background: white;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03);
+    border: 1px solid  #BABFC3;
+    border-radius: 15px;
+}
+.select .content-select{
+    width: 217px;
+    height: 20px;
+    top: 8px;
+    border-radius: 4px;
+}
+.filter-criteria{
+    width: fit-content;
+    height: 25px;
+    left: -3.5px;
+    top: 1px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+.select .down-icon{
+    width: 10px;
+    height: 20px;
+}
+.select.active,
+.select:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+}
+/*Desplegable de opciones*/
+.options{
+    display: none;
+    background: white;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03);
+    border: 1px solid  #BABFC3;
+    border-radius: 15px;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 2;
+}
+.options.active{
+    display: block;
+    z-index: 2;
+}
+.content-option{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: .2s ease all;
+    height: 40px;
+    color: black;
+}
+.content-option img{
+    width: 30px;
+    height: 30px;
+}
+.content-option:hover {
+    background:#02A650; 
+}
+.content-option:hover p{
+    color: white; 
+}
+thead th{
+    padding: .5rem 0rem;
+    border-bottom: 2px solid var(--color-dark-silver);
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+}
+img, .avatar-circle{
+    height: 40px;
+    width: 40px;
+    border-radius: 100;
+}
+.table-responsive{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+td{
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    border-bottom: 1px solid var(--color-light-silver) ;
+}
+table{
+    width: 100%;
+}
+.column-1{
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+#tableContentAthlete .column-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding: 9px;
+}
+#tableContentAthlete .column-2 .avatar-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-light-silver);
+    border-radius: 100%;
+    margin-right: 1rem;
+}
+#tableContentAthlete .column-2:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--color-silver), 0 0 5px var(--color-silver), 0 0 5px var(--color-silver);
+    color: #02A650;
+}
+
+.icons-arrows{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+.icons-arrows i{
+    font-size: 1.5rem;
+    color: rgb(112, 110, 110);
+    cursor: pointer;
+}
+.icons-arrows i:hover{
+    color: var(--color-orange);
+}
+.th-column6, .th-column5, .th-column4, .th-column3, .th-column2, .th-column1{
+    display:flex;
+    align-items:center;
+}
+.icon-up, .icon-down{
+    margin-bottom: -0.7rem;
+    margin-left:0.5rem;
+}
+.icons{
+    margin-bottom: -0.7rem;
+    margin-left:0.5rem;
+}
+.medal .medal-circle-gold{
+    box-shadow: 0 0 5px var(--color-gold), 0 0 5px var(--color-gold), 0 0 5px var(--color-gold);
+
+}
+.medal .medal-circle-silver{
+    box-shadow: 0 0 5px var(--color-silver), 0 0 5px var(--color-silver), 0 0 5px var(--color-silver);
+}
+.medal .medal-circle-bronze{
+    box-shadow: 0 0 5px var(--color-bronze), 0 0 5px var(--color-bronze), 0 0 5px var(--color-bronze);
+}
+.medal-circle-gold{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-gold);
+    height: 32px;
+    width: 32px;
+    border-radius: 1000px;
+}
+.medal-circle-gold:hover {
+    box-shadow: 0 0 10px var(--color-gold), 0 0 10px var(--color-gold), 0 0 10px var(--color-gold);
+}
+.medal-circle-silver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-silver);
+    height: 32px;
+    width: 32px;
+    border-radius: 1000px;
+}
+.medal-circle-silver:hover{
+    box-shadow: 0 0 10px var(--color-silver), 0 0 10px var(--color-silver), 0 0 10px var(--color-silver);
+}
+.medal-circle-bronze{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bronze);
+    height: 32px;
+    width: 32px;
+    border-radius: 1000px;
+}
+.medal-circle-bronze:hover{
+    box-shadow: 0 0 10px var(--color-bronze), 0 0 10px var(--color-bronze), 0 0 10px var(--color-bronze);
+}
+/*---------------Paises----------*/
+/* #countryTable td{
+    text-align: center;
+} */
+.columnOne{
+    text-align: left !important;
+}
+/*-------------Deportes---------------------*/
+.tableSport{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0rem;
+    margin-top: 0.5rem;
+}
+#numEvent{
+    position: relative;
+    border-bottom: 1px solid var(--color-dark-silver);
+}
+.group1{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color-light-silver);
+    margin-top: 2rem;
+    height: 210px;
+}
+.group2{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color-light-silver);
+    margin-top: 2rem;
+    height: 210px;
+}
+.group3{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color-light-silver);
+    margin-top: 2rem;
+    height: 210px;
+}
+.group4{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color-light-silver);
+    margin-top: 2rem;
+    height: 210px;
+}
+.group5{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color-light-silver);
+    margin-top: 2rem;
+    height: 210px;
+}
+.group6{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color-light-silver);
+    margin-top: 2rem;
+    height: 210px;
+}
+.group7{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color-light-silver);
+    margin-top: 2rem;
+    height: 210px;
+    width: 800px;
+}
+.sportTitle{
+    color: black;
+    margin-left: 3rem;
+}
+.sportContent{
+    
+    margin-top: 2rem;
+    padding: 0px;
+    display:block;
+    width: 100%;
+    height: 1000%;
+}
+#title{
+    text-align:center;
+    color: #02a650;
+}
+#sportFilter{
+  position: relative;
+}
+.acordeon{
+    width: 100%;
+    max-width: 120em;
+}
+.acordeon .bloque{
+    background: linear-gradient(to left, #FAA700, #02a650);
+    margin: 0 0 1em;
+    padding: 1em;
+}
+.acordeon .h2 {
+    color:white;
+    margin: 0 0 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.acordeon .contenido {
+    padding: 1em;
+    height: 0;
+    padding: 0em;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+.acordeon .bloque.activo .contenido{
+    height: 24em;
+    overflow-y: auto;
+}
+.contenido .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-top: 1rem; 
+}
+
+/*----------------Estadísiticas-----------------*/
+.statistics-section2{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.mini-charts{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.mini-charts.one{
+    padding: 30px;
+}
+.mini-charts.two{
+    padding-top:60px;
+}
+.titleCharts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+footer{
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to bottom, #FAA700, #02a650);
+}
+footer .rings-logo{
+    width: 70px;
+    height: 60px;
+}
+.footer-sections{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-sections.one{
+    border-top: 1px solid white;
+    padding-top: 10px;
+}
+
+@media only screen and (max-width:1201px){ 
+    .tableSport{
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 0.5rem;
+    } 
+    nav{
+        width: 70px;
+    }
+    nav li{
+        padding-left: 1rem;
+        text-align: left;
+    }
+    .sidebar-menu li{
+        padding-left: 0rem;
+    }
+    nav li a{
+        padding-left: 0rem;
+    }
+    nav .logo,
+    nav li a span{
+        display: none;
+    }
+    .container{
+        width: calc(100%-70px);
+        margin-left: 70px;
+    }
+    .container header{
+        width: calc(100% - 70px);
+        left: 70px;
+    }
+    nav:hover .logo,
+    nav:hover li a span{
+        display: none;
+    }
+    #nav-toggle:checked + nav {
+        width: 345px;
+        padding-left: 2rem;
+        text-align: left;
+    }
+    #nav-toggle:checked + nav li a{
+        padding-left: 1rem;
+    } 
+    #nav-toggle:checked + nav .logo,
+    #nav-toggle:checked + nav li a span{
+        display: inline;
+    }
+    #nav-toggle:checked ~ .container{
+        margin-left: 345px;
+    } 
+    #nav-toggle:checked ~ .container header{
+        width: calc(100% - 345px);
+        left: 345px;
+    } 
+    #nav-toggle:checked ~ .container .cards{
+        grid-template-columns: repeat(3, 1fr);
+    } 
+    #nav-toggle:checked ~ .container .tableSport{
+        grid-template-columns: repeat(3, 1fr);
+    } 
+}
+@media only screen and (max-width:961px){
+    .cards{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tableSport{
+        grid-template-columns: repeat(4, 1fr);
+    } 
+    .group1, .group2, .group3, .group4, .group5, .group6{
+        height:360px;
+    }
+    #nav-toggle:checked ~ .container .tableSport{
+        grid-template-columns: repeat(2, 1fr);
+    } 
+    #nav-toggle:checked ~ .container .group1, .group2, .group3, .group4, .group5, .group6, .group7{
+        height:510px;
+    }
+    #nav-toggle:checked ~ .container .group7{
+    width: 503px;
+    }
+    .acordeon .contenido .cards {
+        grid-gap: 0.5rem;
+    }
+    .acordeon .card-athlete {
+        padding: 0.5rem;
+        height: 300px;
+    }
+    .header-title{
+        font-size: 13px;
+    }
+    #nav-toggle:checked ~ .container .statistics-section2{
+        flex-direction: column;
+    } 
+    #nav-toggle:checked ~ .container .statistics-section2 .mini-charts{
+        padding: 0px;
+        width: 90%;
+    } 
+    #nav-toggle:checked ~ .container .statistics-section2 .mini-charts.two{
+        padding-top: 30px;
+    } 
+    #nav-toggle:checked ~ .container .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #nav-toggle:checked ~ .container .icons-arrows{
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+    #nav-toggle:checked ~ .container #filterAthletes{
+        flex-wrap:wrap;
+    }
+    #nav-toggle:checked ~ .container #filterAthletes .filter-container{
+        margin-top: 1rem;
+    }
+    
+}
+@media only screen and (max-width:769px){
+    .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #country .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav{
+        left: -100% !important;
+    }
+    header h1{
+        display: flex;
+        align-items: center;
+    }
+    header h1 label {
+        display: inline-block;
+        text-align: center;
+        background: var(--main-color-green);
+        padding-left: 1rem;
+        margin-right: 1rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+    }
+    header h1{
+        font-size: 1.1rem;
+    }
+    .container{
+        width: 100%;
+        margin-left: 0rem;
+    }
+    .popUpContent{
+        width: 80%;
+    }
+    header{
+        width: 100% !important;
+        left: 0 !important;
+    }
+    #nav-toggle:checked + nav{
+        left: 0 !important;
+        padding-top: 0px;
+        z-index: 100;
+        width: 290px;
+    }
+    #nav-toggle:checked + nav, 
+    #nav-toggle:checked + nav li{
+        padding-left: 2rem;
+        text-align: left;
+    }
+    #nav-toggle:checked + nav li a{
+        padding-left: 1rem;
+    }
+    #nav-toggle:checked + nav .logo img{
+        height: 155px !important;
+    }
+    #nav-toggle:checked + nav .logo,
+    #nav-toggle:checked + nav li a span{
+        display: inline;
+    }
+    #nav-toggle:checked ~ .container{
+        margin-left: 0px;
+    } 
+    #nav-toggle:checked ~ .container header{
+        width: calc(100% - 345px);
+        left: 345px;
+    } 
+    #nav-toggle:checked ~ .container .tableSport{
+        grid-template-columns: repeat(3, 1fr);
+    } 
+    #filterAthletes{
+        flex-wrap:wrap;
+    }
+    #filterAthletes .filter-container{
+        margin-top: 1rem;
+    }
+    .icons-arrows{
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+    .popUpContent{
+        margin-left: 0rem;
+        margin-top:0rem;
+        width: 60%
+    }
+}
+@media only screen and (max-width:561px){
+    .popUpContent{
+        height: 280px;
+        width: 80%;
+    }
+    .popUpContent .popUp-info{
+        font-size: 14px;
+    }
+    .popUpContent .popUp-img{
+        width: 8rem;
+        height: 8rem;
+    }
+    header h2{
+        font-size: 20px;
+    }
+    main{
+        padding: 1rem 3.5rem;
+    }
+    main h1 {
+        font-size: 40px !important;
+    }
+    main h2 {
+        font-size: 20px !important;
+    }
+    .table-responsive{
+        overflow-x: scroll;
+        justify-content: initial;
+    }
+    .tableSport{
+        grid-template-columns: repeat(2, 1fr);
+    } 
+    .group1, .group2, .group3, .group4, .group5, .group6{
+        height: 500px;
+    }
+    .group7{
+        width: 448px;
+    }
+    .statistics-section2{
+        flex-direction: column;
+    } 
+    .statistics-section2 .mini-charts{
+        padding: 0px;
+        width: 90%;
+    } 
+    .statistics-section2 .mini-charts.two{
+        padding-top: 30px;
+    } 
+    #nav-toggle:checked ~ .container .cards{
+        grid-template-columns: 100%;
+    }
+    #nav-toggle:checked ~ .container .tableSport{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+@media only screen and (max-width:376px){
+    header span {
+        padding-left: 65px;
+    }
+    header h2{
+        font-size: 15px;
+    }
+    .cards{
+        grid-template-columns: 100%;
+    }
+    .medals{
+        justify-content: space-around;
+    }
+    #country .cards{
+        grid-template-columns: 100%;
+    }
+    .input-label{
+        width: 60%;
+    }
+    #filterAthletes{
+        margin-top: 0.5rem
+    }
+    .icons-arrows {
+        padding-left: 5rem;
+        padding-right: 5rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+    .tableSport{
+        grid-template-columns: repeat(2, 1fr);
+        height: 160px;
+    }
+    .acordeon .bloque.activo .contenido {
+        height: 17em;
+    }
+    .acordeon .contenido .cards {
+        grid-gap: 0.5rem;
+    }
+    .acordeon .card-athlete {
+        padding: 0.3rem;
+        height: 250px;
+    }
+    .acordeon .card-athlete .img-card{
+        height: 80px;
+        width: 80px;
+    }
+    main{
+        padding: 0rem 2rem;
+        margin-top: 80px;
+    }
+    table{
+        width: 100%;
+    }
+    thead th, .td{
+        padding: .5rem 0rem;
+    }
+    thead th:last-child {
+        display: flex;
+        align-items: center;
+    }
+    thead th:last-child span{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 20px;
+    }
+    thead i{
+        height: 10px !important;
+    }
+    .group1, .group2, .group3, .group4, .group5, .group6, .group7{
+        padding-left: 0;
+        height: 530px;
+    }
+    .group7{
+        width: 311px;
+        height: 380px;
+    }
+    .articleImg{
+        width: 120px;
+    }
+    .statistics-section1{
+        width: 100%;
+    }
+    .statistics-section2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+    }
+    .mini-charts{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .mini-charts.one{
+        padding: 0;
+    }
+    .mini-charts.two{
+        padding-top:0;
+    }
+    .titleCharts{
+        font-size: 20px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+    } 
+    .footer-sections p{
+        text-align: center;
+    }
+}
+
+
+/*------------------------------------------------------------------*/
+

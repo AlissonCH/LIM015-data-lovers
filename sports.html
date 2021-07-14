@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitroDeportes</title>
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/4177a2ab13.js" crossorigin="anonymous"></script>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+
+<body>
+
+  <h1 id="title">
+  </h1>
+
+  <div class="filterSports">
+    <!-------------------Filtros---------------------------------------------------------->
+    <section class="filter-container" id="sportFilter">
+      <section class="select-box">
+        <label class="select">
+          <div class="content-select">
+            <p class="filter-criteria">Deportes</p>
+          </div>
+          <i class="down-icon fas fa-sort-down"></i>
+        </label>
+        <label class="options">
+        </label>
+      </section>
+      <input type="hidden" class="user-selection" id="sportSelection">
+    </section>
+
+    <!-- <section class="filter-container" id="eventsFilter">
+      <section class="select-box">
+        <label class="select">
+          <div class="content-select">
+            <p class="filter-criteria">Eventos</p>
+          </div>
+          <i class="down-icon fas fa-sort-down"></i>
+        </label>
+        <label class="options">
+          <a href="#" class="option">
+            <div class="content-option">
+              <p class="data">Team Mixec</p>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="content-option">
+              <p class="data">Team three</p>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="content-option">
+              <p class="data">Team four</p>
+            </div>
+          </a>
+        </label>
+      </section>
+      <input type="hidden" class="user-selection" id="eventsSelection">
+    </section>
+
+    <section class="filter-container" id="genderFilter">
+      <section class="select-box">
+        <label class="select">
+          <div class="content-select">
+            <p class="filter-criteria">Género</p>
+          </div>
+          <i class="down-icon fas fa-sort-down"></i>
+        </label>
+        <label class="options">
+        </label>
+      </section>
+      <input type="hidden" class="user-selection">
+    </section> -->
+  </div>
+
+  <main class="sportContent">
+    <!------------------------ Eventos----------------------------------------------------->
+    <div id="container-events">
+    </div>
+  </main>
+
+  <script src="./sports.js" type="module"></script>
+</body>
+
+</html>
