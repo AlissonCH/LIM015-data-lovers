@@ -449,7 +449,6 @@ const dataSport = groupBySport(dataAthletes);
                 hiddenInput3.value = e.currentTarget.querySelector('.data').innerText;
                 const dataFilteredByValue = filterByValue(dataGroupByName, 'sport', hiddenInput3.value.toUpperCase());
                 showDataFilter (dataFilteredByValue);
-                showAndCloseDataInPopUp('name');
             });
     });     
 }());
