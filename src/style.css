@@ -317,6 +317,7 @@ h3{
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03);
     border: 1px solid  #BABFC3;
     border-radius: 15px;
+    cursor: pointer;
 }
 #filterAthletes{
     display:flex;
@@ -361,6 +362,7 @@ h3{
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03);
     border: 1px solid  #BABFC3;
     border-radius: 15px;
+    cursor: pointer;
 }
 .select .content-select{
     width: 217px;
@@ -452,16 +454,16 @@ table{
 .column-1{
     justify-content: flex-start;
     align-items: center;
-    text-align: center;
+    text-align: left;
     height: 100%;
 }
 #tableContentAthlete .column-2{
-    display: flex;
+    display: table-cell;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
     height: 100%;
-    padding: 9px;
+}
+#tableContentAthlete .column-2{
+    color: var(--color-green-two);
 }
 #tableContentAthlete .column-2 .avatar-circle{
     display: flex;
@@ -474,7 +476,7 @@ table{
 #tableContentAthlete .column-2:hover{
     cursor: pointer;
     box-shadow: 0 0 5px var(--color-silver), 0 0 5px var(--color-silver), 0 0 5px var(--color-silver);
-    color: #02A650;
+    color: var(--color-orange);
 }
 
 .icons-arrows{
@@ -498,10 +500,12 @@ table{
     align-items:center;
 }
 .icon-up, .icon-down{
+    cursor: pointer;
     margin-bottom: -0.7rem;
     margin-left:0.5rem;
 }
 .icons{
+    cursor: pointer;
     margin-bottom: -0.7rem;
     margin-left:0.5rem;
 }
@@ -996,6 +1000,7 @@ footer .rings-logo{
         grid-template-columns: 100%;
     }
     .input-label{
+        cursor: pointer;
         width: 60%;
     }
     #filterAthletes{
